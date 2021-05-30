@@ -71,9 +71,10 @@ Image reviewer feature:
 ![image](https://user-images.githubusercontent.com/46007591/120107179-b0172b00-c168-11eb-9359-e89c97cde864.png)
 
 Future features(may be):
-⦁	Linear interpolation
-⦁	Frequency filtering
-⦁	other...
+
+      ⦁	Linear interpolation
+      ⦁	Frequency filtering
+      ⦁	other...
 
 
 
