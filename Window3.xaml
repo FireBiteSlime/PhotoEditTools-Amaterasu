@@ -1,0 +1,50 @@
+﻿<Window x:Class="PhotoEditTools.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotoEditTools"
+        mc:Ignorable="d"
+        Title="Spatial filtering reviewer" Height="450" Width="453.5" Closed="Window_Closed">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="stackPanelMedian" Margin="10,63,295,212">
+            <Label x:Name="label6" Content="Window's radius:"/>
+            <TextBox x:Name="textBoxMedianRadius" Text="{Binding Mode=OneWay, Path=spatialFilteringData.medianRadius}" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <Grid x:Name="gridLinearInput" Margin="0,58,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Hidden">
+            <Label x:Name="label2" Content="Kernel:" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top"/>
+
+            <Label x:Name="label5" Content="Kernel sum:" HorizontalAlignment="Left" Margin="10,0,0,64" VerticalAlignment="Bottom"/>
+            <Label x:Name="labelKernelSum" Content="0" HorizontalAlignment="Left" Margin="81,0,0,64" VerticalAlignment="Bottom"/>
+
+            <TextBox x:Name="textBoxKernel" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Text="{Binding Mode=OneWay, Path=spatialFilteringData.kernelView}"
+                     VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10,30,10,90" TextChanged="textBoxKernel_TextChanged" Cursor="IBeam"></TextBox>
+
+            <Label x:Name="label3" Content="Gaussian matrix coefficients:" HorizontalAlignment="Left" Margin="10,0,0,36" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="textBoxSigmaGauss" HorizontalAlignment="Left" Margin="60,0,0,14" Text="3" TextWrapping="Wrap" Height="25" Width="30" VerticalAlignment="Bottom" Cursor="IBeam"/>
+            <Label x:Name="label1" Content="Sigma:" HorizontalAlignment="Left" Margin="10,0,0,10"  VerticalAlignment="Bottom"/>
+            <Label x:Name="label4" Content="Radius:" HorizontalAlignment="Left" Margin="95,0,0,10" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="textBoxRadiusGauss" HorizontalAlignment="Left" Margin="143,0,0,14" Text="6" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="30"/>
+            <Button x:Name="buttonGenerateGauss" Content="Generate" HorizontalAlignment="Left" Margin="178,0,0,13" VerticalAlignment="Bottom" Click="buttonGenerateGauss_Click"/>
+        </Grid>
+
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,36,0,0" SelectionChanged="comboBox_SelectionChanged"
+                  VerticalAlignment="Top" Width="120" SelectedIndex="{Binding Mode=OneWay, Path=spatialFilteringData.typeView}">
+            <!-- Order should be same as in Filtering enum-->
+            <ComboBoxItem>None</ComboBoxItem>
+            <ComboBoxItem>Linear</ComboBoxItem>
+            <ComboBoxItem>Median</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="label" Content="Mode:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonSet" Content="Set" Height="30" Width="71" HorizontalAlignment="Left" Margin="135,36,0,0" VerticalAlignment="Top" Click="buttonSet_Click"/>
+    </Grid>
+</Window>
