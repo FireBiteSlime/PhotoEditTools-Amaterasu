@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\host_\PhotoEditTools-Amaterasu\App.xaml
-4-1508649396
+4-1575875436
 
-15-875185959
+15-1282597470
 196-999876916
-MainWindow.xaml;Window1.xaml;Window2.xaml;Window3.xaml;
+CurveReviewer\CurveReviewerPage.xaml;ImageReviewer\ImageReviewerPage.xaml;Main\MainWindow.xaml;SpatialFiltering\SpatialFilteringReviewerPage.xaml;
 
 False
 

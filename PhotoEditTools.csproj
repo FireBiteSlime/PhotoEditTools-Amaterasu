@@ -25,4 +25,13 @@
     <Resource Include="4.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ImageReviewer\" />
+    <Folder Include="SpatialFiltering\" />
+    <Folder Include="CurveReviewer\" />
+    <Folder Include="Binarization\" />
+    <Folder Include="Main\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+
 </Project>

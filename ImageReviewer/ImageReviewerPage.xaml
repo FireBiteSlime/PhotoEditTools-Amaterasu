@@ -1,0 +1,132 @@
+﻿<Window x:Class="PhotoEditTools.ImageReviewerPage"
+        AllowDrop="True"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotoEditTools"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ImageReviewerPage" Height="450" Width="350" LocationChanged="Window_LocationChanged" MouseDown="Window_MouseDown" Drop="Window_Drop" DragLeave="Window_DragLeave" WindowStyle="None" ResizeMode="CanResize" MouseLeave="Window_MouseLeave" MouseLeftButtonDown="Window_MouseLeftButtonDown" MouseLeftButtonUp="Window_MouseLeftButtonUp" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="137*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="buttonUpload" Grid.Row="1" Content="Add image" VerticalAlignment="Top" Margin="10,45,10,0" Click="buttonUpload_Click" Grid.ColumnSpan="2" />
+        <Button x:Name="buttonSave" Grid.Row="1" Content="Save result" VerticalAlignment="Top" Margin="10,10,10,0" IsEnabled="False" Click="buttonSave_Click" Grid.ColumnSpan="2" />
+
+        <ScrollViewer x:Name="Scroll" Grid.Row="2" Grid.ColumnSpan="2">
+            <ItemsControl x:Name="itemsControl" Grid.Row="2" RenderTransformOrigin="0.501,0.502">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:Name="Data">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name ="FirstRow"  Height="Auto"/>
+                                <RowDefinition x:Name="SecondRow" Height="Auto"/>
+                                <RowDefinition x:Name ="ThirdRow" Height="Auto"/>
+                                <RowDefinition x:Name ="FourthRow" Height="Auto"/>
+                                <RowDefinition x:Name ="FifthRow" Height="Auto"/>
+                                <RowDefinition x:Name ="SixthRow" Height="Auto"/>
+                                <RowDefinition x:Name ="SeventhRow" Height="Auto"/>
+                                <RowDefinition x:Name ="EigthRow" Height="Auto"/>
+                                <RowDefinition x:Name ="NinthRow" Height="Auto"/>
+                                <RowDefinition x:Name ="TenthRow" Height="Auto"/>
+                            </Grid.RowDefinitions>
+ 
+                            <Image Grid.Row="0" Height="180"   Width="172" Margin="5, 10, 0, 0" Source="{Binding ImageSource}"/>
+                            <Slider Grid.Row="1" x:Name="sliderOpacity" Value="{Binding opacity}" Minimum="-100" Maximum="100" HorizontalAlignment="Center" Margin="5, 10, 0, 0" VerticalAlignment="Top" Width="172" IsSelectionRangeEnabled="True" PreviewMouseUp="slider_Click" PreviewMouseMove="sliderOpacity_PreviewMouseMove"/>
+                            <Slider Grid.Row="2" x:Name="sliderBrightness" Value="{Binding brightness}" Minimum="0" Maximum="2" HorizontalAlignment="Center" IsEnabled="False" Margin="5, 10, 0, 0" VerticalAlignment="Top" Width="172" IsSelectionRangeEnabled="True" PreviewMouseUp="sliderBrightness_PreviewMouseUp"/>
+                            <Slider Grid.Row="3" Minimum="0" Maximum="100" HorizontalAlignment="Center" Margin="5, 10, 0, 0" VerticalAlignment="Top" Width="172" IsEnabled="False" IsSelectionRangeEnabled="True"/>
+                            <ComboBox Grid.Row="4" HorizontalAlignment="Center" Margin="5, 10, 0, 0" VerticalAlignment="Top" Width="172" SelectedIndex="{Binding method_view}">
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">None</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Normal</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Addition (Linear Dodge)</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Substract</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Multiply</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Divide</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Screen</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Difference</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Overlay</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Exclusion</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Soft Light</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Hard Light</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Vivid Light</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Linear Light</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Pin Light</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Hard Mix</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Darken Only</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Lighten Only</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Color Dodge</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Color Burn</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Linear Burn</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Experimental1</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Experimental2</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="comboBoxItem_Click">Experimental3</ComboBoxItem>
+                            </ComboBox>
+
+                            
+                            <materialDesign:Card Grid.Row="5" Width="172" Margin="4,7,0,0">
+
+                                
+                                
+                            </materialDesign:Card>
+
+                            <Button x:Name="HideButton" Margin="0,7,69,0" Grid.Row="5" Width="50" Height="25" HorizontalAlignment="Right" Content="▼" Click="Button_Click">
+
+
+                            </Button>
+
+                            <Label Content="Binarization" Grid.Row="5" Width="70" Margin="0,7,33,0"></Label>
+
+                            <ComboBox x:Name="comboBox" Visibility="Visible" Height="0"  HorizontalAlignment="Center" Grid.Row="6" Margin="5,10,0,0"  SelectionChanged="comboBox_SelectionChanged" VerticalAlignment="Top" Width="172" SelectedIndex="{Binding Mode=OneWay, Path=binarizationData.typeView}">
+                                <!-- Order should be same as in Channel enum-->
+
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">None</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">Gavrilov</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">Otsu</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">Niblack</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">Sauvola</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">Wolf</ComboBoxItem>
+                                <ComboBoxItem PreviewMouseUp="BinarizationComboBoxItem_Click">Bradley</ComboBoxItem>
+                            </ComboBox>
+
+
+                            
+
+
+                            <StackPanel x:Name="stackPanelInputs" Visibility="Hidden" Margin="5,10,0,0" Height="0"  Grid.Row="7" >
+                                <Label x:Name="label1" Content="Window's size:" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="textBoxSize" Text="{Binding Mode=OneWay, Path=binarizationData.windowsSize}" TextWrapping="Wrap" Width="120" HorizontalAlignment="Center"/>
+                                <Label x:Name="label2" Content="Parameter:" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="textBoxParam" Text="{Binding Mode=OneWay, Path=binarizationData.parametrs}" TextWrapping="Wrap" Width="120" HorizontalAlignment="Center"/>
+
+                            </StackPanel>
+
+
+                            <Button x:Name="SetButton" Grid.Row="8" Width="70" Height="0" HorizontalAlignment="Center" Margin="0,7,0,0" Content="Set" Click="Set_Button_Click">
+
+
+                            </Button>
+
+
+                            <Button x:Name="Upbutton" Content="▲" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75,10,0,10" Click="Upbutton_Click" />
+                            <Button x:Name="Downbutton" Content="▼" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,70,10" Click="Downbutton_Click"/>
+                            <Button x:Name="Removebutton" Content="✖" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,10,0,10" Click="Removebutton_Click"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <GroupBox  x:Name="GB" VerticalAlignment="Top" Header="Image reviewer" Grid.Row="0" Grid.ColumnSpan="2" Height="40" MouseLeftButtonDown="GroupBox_MouseLeftButtonDown" MouseLeftButtonUp="GroupBox_MouseLeftButtonUp" />
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name ="TopControlPanel" AllowDrop="True" Height="30" MouseLeftButtonDown="TopControlPanel_MouseLeftButtonDown" MouseLeftButtonUp="TopControlPanel_MouseLeftButtonUp"/>
+            <RowDefinition x:Name="CentralPanel" Height="Auto"/>
+            <RowDefinition x:Name ="BottomControlPanel" />
+
+        </Grid.RowDefinitions>
+    </Grid>
+</Window>
