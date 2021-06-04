@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\host_\\PhotoEditTools-Amaterasu\\PhotoEditTools.csproj": {}
+    "C:\\Users\\host_\\Desktop\\Новая папка\\PhotoEditTools.csproj": {}
   },
   "projects": {
-    "C:\\Users\\host_\\PhotoEditTools-Amaterasu\\PhotoEditTools.csproj": {
+    "C:\\Users\\host_\\Desktop\\Новая папка\\PhotoEditTools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\host_\\PhotoEditTools-Amaterasu\\PhotoEditTools.csproj",
+        "projectUniqueName": "C:\\Users\\host_\\Desktop\\Новая папка\\PhotoEditTools.csproj",
         "projectName": "PhotoEditTools",
-        "projectPath": "C:\\Users\\host_\\PhotoEditTools-Amaterasu\\PhotoEditTools.csproj",
+        "projectPath": "C:\\Users\\host_\\Desktop\\Новая папка\\PhotoEditTools.csproj",
         "packagesPath": "C:\\Users\\host_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\host_\\PhotoEditTools-Amaterasu\\obj\\",
+        "outputPath": "C:\\Users\\host_\\Desktop\\Новая папка\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\host_\\AppData\\Roaming\\NuGet\\NuGet.Config",

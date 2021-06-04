@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sRTZPjyZkmaBeIsybGR3P3VLotsn2Jgioxz6gaht4t8OPbtCEBaR0l1UYFqWwobkOiPY8cDIGsgI4m9T6SwJMg==",
+  "dgSpecHash": "zvN1YCFrZnsbuCvSYDZjXvt/uVUksSH4mVnQ8RzmNGl2FycFyY1Iuaevx3YRtu9txI5+jrDDWlpZLRtx/TUOfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\host_\\PhotoEditTools-Amaterasu\\PhotoEditTools.csproj",
+  "projectFilePath": "C:\\Users\\host_\\Desktop\\Новая папка\\PhotoEditTools.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\host_\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
     "C:\\Users\\host_\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
